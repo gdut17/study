@@ -71,8 +71,8 @@ int main(int argc,char *argv[])
 					}
 					else{//有客户消息发送
 					
-						memset(buf,0,SIZE);
-						r = read(i,buf,SIZE-1);
+						memset(buf,0,1024);
+						r = read(i,buf,1024-1);
 						if(r == 0) //客户端断开链接
 						{
 							FD_CLR(i,&reads);////在reads集合删除文件描述符
